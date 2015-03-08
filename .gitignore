@@ -1,0 +1,22 @@
+### Rails ###
+*.rbc
+capybara-*.html
+.rspec
+/log/*
+!/log/.keep
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+# Ignore dotenv configuration file
+.env
