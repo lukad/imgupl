@@ -42,6 +42,7 @@ group :test, :development do
   gem 'pry-coolline'
   gem 'pry-remote'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
   gem 'cucumber-rails', require: false
   gem 'factory_girl_rails'
   gem 'rubocop', require: false

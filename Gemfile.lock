@@ -250,6 +250,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simplecov (0.9.2)
       docile (~> 1.1.0)
       multi_json (~> 1.0)
@@ -347,6 +349,7 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   sass-rails
+  shoulda-matchers
   simplecov
   slim-rails
   stackprof
