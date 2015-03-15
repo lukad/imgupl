@@ -23,6 +23,7 @@ gem 'dotenv-rails'
 
 group :development do
   gem 'bullet'
+  gem 'ruby-growl'
   gem 'therubyracer', platforms: :ruby
   gem 'awesome_print'
   gem 'better_errors'
