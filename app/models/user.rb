@@ -20,10 +20,4 @@ class User < ActiveRecord::Base
     return where(conditions.to_h) unless login
     where(conditions.to_h).where('username = :login OR email = :login', login: login).try(:first)
   end
-
-  protected
-
-  def confirmation_required?
-    false
-  end
 end

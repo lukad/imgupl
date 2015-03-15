@@ -1,0 +1,35 @@
+- if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  .alert.alert.info
+    p Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+.col-md-offset-3.col-md-6
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title Edit your account
+
+      .panel-body
+        = devise_error_messages!
+
+        .form-group
+          = f.label :username
+          = f.text_field :username, class: 'form-control', readonly: true, tabindex: -1
+
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
+
+        .form-group
+          = f.label :password
+          = f.password_field :password, autocomplete: 'off', class: 'form-control'
+          p.help-text Leave blank if you don't want to change it
+
+        .form-group
+          = f.label :current_password
+          = f.password_field :current_password, autocomplete: 'off', class: 'form-control'
+          p.help-text We need your current password to confirm your changes
+
+      .panel-footer
+        button.btn.btn-primary type='submit' Update
+
+  = button_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

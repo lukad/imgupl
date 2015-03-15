@@ -1,0 +1,24 @@
+.col-md-offset-4.col-md-4
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Sign In
+
+      .panel-body
+        .form-group
+          = f.label :login, 'Username or Email'
+          = f.text_field :login, placeholder: 'Enter email', class: 'form-control', autofocus: true
+
+        .form-group
+          = f.label :password
+            | Password (#{link_to 'forgot password', new_user_password_path, tabindex: -1 })
+          = f.password_field :password, autocomplete: 'off', class: 'form-control'
+
+        - if devise_mapping.rememberable?
+          .checkbox
+            = f.label :remember_me do
+              = f.check_box :remember_me
+              | Remember me
+
+      .panel-footer
+        = f.submit 'Sign In', class: 'btn btn-success'
