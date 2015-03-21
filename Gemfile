@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby File.read(File.expand_path('.ruby-version', File.dirname(__FILE__))).chomp
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 gem 'pg'
 gem 'turbolinks'
 gem 'jbuilder'

@@ -22,3 +22,4 @@ pickle-email-*.html
 .env
 
 public/uploads/*
+public/image
