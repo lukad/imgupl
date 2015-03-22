@@ -1,5 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
 
   storage :file
   # storage :fog
@@ -13,12 +13,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "#{mounted_as}/#{model.id}"
   end
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [128, 128]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

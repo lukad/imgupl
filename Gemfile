@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'carrierwave'
+gem 'rmagick'
 gem 'unicorn-rails'
 gem 'dotenv-rails'
 
