@@ -36,6 +36,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'meta_request'
 end
 
 group :test, :development do
