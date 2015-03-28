@@ -10,9 +10,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
-  validates :username,
-            presence: true,
-            uniqueness: true
+  has_many :uploads, dependent: :destroy
+
+  validates :username, presence: true
+  validates :username, uniqueness: { case_sensitive: false }
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
