@@ -3,8 +3,10 @@ class Upload < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  validates :image,
-            presence: true
+  belongs_to :user
+
+  validates :image, presence: true
+  validates :user, presence: true
   validate :file_size
 
   def file_size
