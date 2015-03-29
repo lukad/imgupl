@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :username, uniqueness: { case_sensitive: false }
 
+  scope :confirmed, -> { where('confirmed_at IS NOT NULL') }
+  scope :unconfirmed, -> { where('confirmed_at IS NULL') }
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
