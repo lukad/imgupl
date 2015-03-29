@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :uploads
 
     devise_for :users
+    ActiveAdmin.routes(self)
   end
 end

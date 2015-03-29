@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'unicorn-rails'
 gem 'dotenv-rails'
+gem 'activeadmin', '~> 1.0.0.pre1'
 
 group :development do
   gem 'bullet'
