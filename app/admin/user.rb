@@ -8,6 +8,7 @@ ActiveAdmin.register User do
   end
 
   index do
+    selectable_column
     id_column
     column :username
     column :email
