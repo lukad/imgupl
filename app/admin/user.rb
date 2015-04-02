@@ -1,6 +1,18 @@
 ActiveAdmin.register User do
   permit_params :username, :email, :password, :admin
 
+  member_action :reset_password, method: :post do
+    resource.send_reset_password_instructions
+    redirect_to admin_user_path(resource), flash: { notice: 'Email was sent.' }
+  end
+
+  action_item :reset_password_link, only: :show do
+    link_to 'Reset password',
+            reset_password_admin_user_path(user),
+            method: :post,
+            data: { confirm: 'Send Email with password reset instructions?' }
+  end
+
   sidebar 'Details', only: [:show, :edit] do
     ul do
       li link_to 'Uploads', admin_user_uploads_path(user)
