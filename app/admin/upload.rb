@@ -4,6 +4,7 @@ ActiveAdmin.register Upload do
   permit_params :user_id, :image
 
   index do
+    selectable_column
     id_column
     column :created_at
     column :updated_at
