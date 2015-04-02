@@ -8,8 +8,8 @@
         = devise_error_messages!
 
         .form-group
-          = f.label :email
-          = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Enter email'
+          = f.label :login
+          = f.text_field :login, autofocus: true, class: 'form-control', placeholder: 'Enter email or username'
 
       .panel-footer
         button.btn.btn-primary type='submit' Send me reset password instructions
