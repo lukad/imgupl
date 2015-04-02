@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable,
-         authentication_keys: [:login]
+         authentication_keys: [:login],
+         reset_password_keys: [:login]
 
   attr_accessor :login
 
@@ -18,10 +19,10 @@ class User < ActiveRecord::Base
   scope :confirmed, -> { where('confirmed_at IS NOT NULL') }
   scope :unconfirmed, -> { where('confirmed_at IS NULL') }
 
-  def self.find_for_database_authentication(warden_conditions)
+  def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
-    return where(conditions.to_h) unless login
-    where(conditions.to_h).where('username = :login OR email = :login', login: login).try(:first)
+    return where(conditions.to_h).where('username = :login OR email = :login', login: login).try(:first) if login
+    where(conditions.to_h).first
   end
 end
