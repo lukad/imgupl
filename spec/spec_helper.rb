@@ -1,6 +1,11 @@
-require 'simplecov'
-SimpleCov.start 'rails' do
-  add_filter 'app/admin'
+if ENV.key? 'TRAVIS'
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+else
+  require 'simplecov'
+  SimpleCov.start 'rails' do
+    add_filter 'app/admin'
+  end
 end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
