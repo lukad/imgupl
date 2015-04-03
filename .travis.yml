@@ -5,6 +5,6 @@ rvm:
 addons:
   postgresql: '9.3'
 env:
-  - DATABASE_DB=imgupl DATABASE_USER=postgres SECRET_KEY_BASE=ad734890fb168ff80b1c8cc1ebabdb5fd8518ea3d3f03d0a47df665df0d263742117fef0651d5b55bfa65fad69e39e06918154c46afd7cf9524a34e3f92d86b6
+  - TRAVIS=true DATABASE_DB=imgupl DATABASE_USER=postgres SECRET_KEY_BASE=ad734890fb168ff80b1c8cc1ebabdb5fd8518ea3d3f03d0a47df665df0d263742117fef0651d5b55bfa65fad69e39e06918154c46afd7cf9524a34e3f92d86b6
 before_script:
   - psql -c 'create database imgupl_test;' -U postgres
