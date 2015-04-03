@@ -13,6 +13,11 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  # It will change confirmation, password recovery and other workflows
+  # to behave the same regardless if the e-mail provided was right or wrong.
+  # Does not affect registerable.
+  config.paranoid = true
+
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
@@ -60,11 +65,6 @@ Devise.setup do |config|
   # ==> Configuration for :validatable
   # Range for password length.
   config.password_length = 8..128
-
-  # ==> Configuration for :recoverable
-  #
-  # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [ :email ]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
