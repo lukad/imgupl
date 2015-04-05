@@ -6,6 +6,8 @@ class Upload < ActiveRecord::Base
   belongs_to :user
 
   validates :image, presence: true
+  validates :image, integrity: true
+  validates :image, processing: true
   validates :user, presence: true
   validate :file_size
 
