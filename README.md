@@ -1,4 +1,4 @@
-Imgupl
+Imgupl [![Build Status](https://travis-ci.org/lukad/imgupl.svg?branch=develop)](https://travis-ci.org/lukad/imgupl) [![Code Climate](https://codeclimate.com/github/lukad/imgupl/badges/gpa.svg)](https://codeclimate.com/github/lukad/imgupl) [![Test Coverage](https://codeclimate.com/github/lukad/imgupl/badges/coverage.svg)](https://codeclimate.com/github/lukad/imgupl)
 ======
 
 Fancy image upload platform.
