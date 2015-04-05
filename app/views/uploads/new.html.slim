@@ -6,11 +6,15 @@
         h3.panel-title New Upload
 
       .panel-body
+        .image-preview.well
+          img.fn-image-preview
         .input-group
           .input-group-btn
-            span.bnt.btn-default.btn-file
+            span.btn.btn-primary.btn-file
               | Browse
               = f.file_field :image, required: true
+          input.form-control.fn-file-name type='text'
+        span.help-block Files of type jpg, png and gif up to 2 MB are allowed.
 
       .panel-footer
         = f.submit 'Upload!', class: 'btn btn-success'

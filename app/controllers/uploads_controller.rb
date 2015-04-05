@@ -11,16 +11,15 @@ class UploadsController < ApplicationController
 
   def new
     @upload = Upload.new
-    @user = current_user
   end
 
   def create
     @upload = Upload.new(upload_params)
     @upload.user = current_user
-    if @upload.save!
+    if @upload.save
       redirect_to @upload
     else
-      flash[:error] = 'Something went wrong :('
+      flash[:error] = 'Image could not be uploaded'
       render 'new'
     end
   end
