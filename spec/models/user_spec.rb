@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
   describe '.find_first_by_auth_conditions' do
     let(:user) { create(:user) }
-    subject { described_class.find_first_by_auth_conditions({ login: login }) }
+    subject { described_class.find_first_by_auth_conditions(login: login) }
 
     context 'by email' do
       context 'found' do
