@@ -12,6 +12,14 @@ class Upload < ActiveRecord::Base
   validate :file_size
 
   def file_size
-    errors.add :image, "The image is bigger than the maximum file size of #{MAX_FILE_SIZE}" if image.size > MAX_FILE_SIZE
+    errors.add :image, "is bigger than the maximum file size of #{MAX_FILE_SIZE}" if image.size > MAX_FILE_SIZE
+  end
+
+  def next
+    Upload.where('id > ?', id).first
+  end
+
+  def previous
+    Upload.where('id < ?', id).last
   end
 end

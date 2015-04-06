@@ -6,3 +6,8 @@ $(document).on 'change', '.btn-file :file', ->
     $('.fn-image-preview').attr('src', event.target.result)
     $('.image-preview').show()
   fileReader.readAsDataURL(file)
+
+$(document).on 'keydown', (event) ->
+  switch event.which
+    when 37 then Turbolinks.visit($('.fn-next').attr('href'))
+    when 39 then Turbolinks.visit($('.fn-previous').attr('href'))
