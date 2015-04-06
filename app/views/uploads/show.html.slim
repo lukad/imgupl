@@ -1,0 +1,14 @@
+.row.well.text-center
+  .col-md-12.text-center
+    = link_to @upload.image.url
+      img.fn-image-show src=@upload.image.url
+
+.row
+  .col-md-6.col-sm-6.col-xs-6.text-right
+    = link_to @next, class: 'btn btn-default fn-next', disabled: @next.nil? do
+      span.glyphicon.glyphicon-chevron-left>
+      | Next
+  .col-md-6.col-sm-6.col-xs-6.text-left
+    = link_to @previous, class: 'btn btn-default fn-previous', disabled: @previous.nil? do
+      | Previous
+      span.glyphicon.glyphicon-chevron-right<

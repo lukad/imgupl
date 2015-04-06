@@ -7,11 +7,10 @@
         span.icon-bar
         span.icon-bar
       a.navbar-brand href=root_path Brand
-      ul.nav.navbar-nav
-        li = link_to 'New', latest_uploads_path
-        li = link_to 'Upload', new_upload_path
 
     .fn-navbar-collapse.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li = link_to 'Upload', new_upload_path
       ul.nav.navbar-nav.navbar-right
         - if current_user
           li = link_to current_user.username, edit_user_registration_path

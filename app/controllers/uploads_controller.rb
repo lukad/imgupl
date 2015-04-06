@@ -1,12 +1,14 @@
 class UploadsController < ApplicationController
-  def latest
-    @uploads = Upload.order(:created_at).limit(50)
+  def index
+    @uploads = Upload.order(created_at: 'desc').limit(50)
     render 'index'
   end
 
   def show
-    upload = Upload.find(params[:id])
-    redirect_to upload.image.url
+    @upload = Upload.find(params[:id])
+    @next = @upload.next
+    @previous = @upload.previous
+    render 'show', layout: 'fluid'
   end
 
   def new
