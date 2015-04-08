@@ -16,7 +16,7 @@ class Upload < ActiveRecord::Base
   end
 
   def next
-    Upload.where('id > ?', id).first
+    Upload.find_by('id > ?', id)
   end
 
   def previous
