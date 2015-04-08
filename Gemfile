@@ -23,7 +23,6 @@ gem 'unicorn-rails'
 gem 'activeadmin', '~> 1.0.0.pre1'
 
 group :development do
-  gem 'dotenv-rails'
   gem 'bullet'
   gem 'ruby-growl'
   gem 'therubyracer', platforms: :ruby
@@ -41,6 +40,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-doc'
