@@ -23,6 +23,6 @@ class User < ActiveRecord::Base
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
     return where(conditions.to_h).where('username = :login OR email = :login', login: login).try(:first) if login
-    where(conditions.to_h).first
+    find_by(conditions.to_h)
   end
 end
