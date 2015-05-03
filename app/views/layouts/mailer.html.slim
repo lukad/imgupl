@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta http-equiv='Content-Type' content='text/html; charset=UTF-8'
+    = stylesheet_link_tag 'mailer.css'
+  body
+    .navbar.navbar-default.navbar-static-top
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href=root_url Brand
+
+    .container
+      = yield
