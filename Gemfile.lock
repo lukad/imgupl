@@ -82,6 +82,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
     callsite (0.0.11)
+    cancancan (1.10.1)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -143,6 +144,8 @@ GEM
     dotenv (2.0.1)
     dotenv-rails (2.0.1)
       dotenv (= 2.0.1)
+    enumerize (0.11.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -385,6 +388,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap_form
   bullet
+  cancancan
   capistrano
   capistrano-bundler
   capistrano-rbenv
@@ -396,6 +400,7 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
+  enumerize
   factory_girl_rails
   flamegraph
   jbuilder

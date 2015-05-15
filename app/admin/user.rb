@@ -1,5 +1,13 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :password, :admin
+  permit_params :username, :email, :password, :role
+
+  filter :username
+  filter :email
+  filter :role, as: :select, collection: User.role.values
+  filter :created_at
+  filter :updated_at
+  filter :confirmed_at
+  filter :unconfirmed_email
 
   member_action :reset_password, method: :post do
     resource.send_reset_password_instructions
@@ -24,9 +32,9 @@ ActiveAdmin.register User do
     id_column
     column :username
     column :email
+    column :role
     column :created_at
     column :confirmed_at
-    column :admin
     actions
   end
 
@@ -35,9 +43,9 @@ ActiveAdmin.register User do
       row :id
       row :username
       row :email
+      row :role
       row :created_at
       row :updated_at
-      row :admin
       row(:uploads) { user.uploads.count }
       row :confirmed_at
       row :confirmation_sent_at
@@ -53,7 +61,12 @@ ActiveAdmin.register User do
 
   form do |f|
     f.semantic_errors
-    f.inputs :username, :email, :password, :admin
+    f.inputs do
+      f.input :username
+      f.input :email
+      f.input :password
+      f.input :role, as: :select, collection: User.role.values
+    end
     f.actions
   end
 end

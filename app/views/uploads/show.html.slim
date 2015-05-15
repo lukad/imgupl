@@ -3,6 +3,20 @@
     = link_to @upload.image.url
       img.fn-image-show src=@upload.image.url
 
+- if can? :moderate, @upload
+  .row
+    .col-md-4.col-md-offset-4
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title #{current_user.role.titleize} Controls
+        .panel-body
+          .btn-group role='group'
+            - if can? :moderate, @upload
+              = link_to 'Delete upload', @upload, method: :delete, data: {confirm: 'Delete upload?' }, class: 'btn btn-danger'
+              /* , class: 'btn btn-danger' */
+            - if can? :manage, @upload
+              = link_to 'Edit upload', edit_admin_upload_path(@upload), class: 'btn btn-default'
+
 .row
   .col-md-6.col-sm-6.col-xs-6.text-right
     = link_to @next, class: 'btn btn-default fn-next', disabled: @next.nil? do
