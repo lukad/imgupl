@@ -11,7 +11,7 @@ Fancy image upload platform.
 * [ ] Comment uploads
 * [ ] Rate uploads
 * [ ] Tag uploads
-* [ ] Role system (user, mod, admin, etc.)
+* [x] Role system (guest, user, mod, admin)
 
 ## Configuration
 
