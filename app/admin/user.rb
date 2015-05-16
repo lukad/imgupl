@@ -65,7 +65,7 @@ ActiveAdmin.register User do
       f.input :username
       f.input :email
       f.input :password
-      f.input :role, as: :select, collection: User.role.values
+      f.input :role, as: :select, collection: User.role.values, include_blank: false
     end
     f.actions
   end
