@@ -405,3 +405,6 @@ DEPENDENCIES
   turbolinks
   uglifier
   unicorn-rails
+
+BUNDLED WITH
+   1.10.4

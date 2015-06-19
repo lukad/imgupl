@@ -15,9 +15,9 @@ RSpec.describe User, type: :model do
 
   it { is_expected.to enumerize(:role).in(:guest, :user, :mod, :admin).with_default(:guest) }
 
-  describe '#confirm!' do
+  describe '#confirm' do
     let(:user) { create(:user, :unconfirmed) }
-    it { expect { user.confirm! }.to change { user.role }.from(:guest).to(:user) }
+    it { expect { user.confirm }.to change { user.role }.from(:guest).to(:user) }
   end
 
   describe '.find_first_by_auth_conditions' do
