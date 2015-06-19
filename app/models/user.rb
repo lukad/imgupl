@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     find_by(conditions.to_h)
   end
 
-  def confirm!
+  def confirm
     super
     update_attribute :role, :user if confirmed?
   end
