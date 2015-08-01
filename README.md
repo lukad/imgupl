@@ -37,15 +37,9 @@ The following environment variables are only used in production environment.
 
 ## Hacking
 
-Create a `.env` file containing all the required configuration parameters.
-
-Example:
-```
-DATABASE_DB='imgupl'
-SECRET_KEY_BASE='539b24987a0428233bbd300cc18068ad93f180fc8a0bd3e98356be340570b3e6ef44f656bf940e9813646b755cc70b1243162011576147a642b773dce6e1ee7e'
-```
-
-Run `bundle exec unicorn -p 3000` and visit [](http://localhost:3000)
+* Install [docker-compose](http://docs.docker.com/compose/install/)
+* Run `docker-compose up` and visit [](http://localhost:3000)
+* Visit [](http://localhost:1080) for the mailcatcher web interface
 
 ## Contributing
 
