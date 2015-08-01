@@ -41,7 +41,7 @@ ActiveAdmin.register Upload do
   form do |f|
     f.semantic_errors
     f.inputs do
-      f.input :user
+      f.input :user, include_blank: false
       f.input :image
     end
     f.actions
