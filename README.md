@@ -22,13 +22,18 @@ The app is configured with the following environment variables.
 | `APP_ROOT_PREFIX`          | App root prefix          |              |          |
 | `DATABASE_CONNECTION_POOL` | Postgres connection pool | 5            |          |
 | `DATABASE_DB`              | Posgres database name    |              | ✓        |
-| `DATABASE_USERNAME`        | Postgres username        | current user |          |
 | `DATABASE_HOST`            | Postgres host            | localhost    |          |
-| `DATABASE_PORT`            | Postgres port            | 5432         |          |
 | `DATABASE_PASSWORD`        | Postgress password       |              |          |
+| `DATABASE_PORT`            | Postgres port            | 5432         |          |
+| `DATABASE_USERNAME`        | Postgres username        | current user |          |
 | `SECRET_KEY_BASE`          | Secret key base          |              | ✓        |
 
-You can generate a secret key used for `SECRET_KEY_BASE` by running `bundle exec rake secret`.
+The following environment variables are only used in production environment.
+
+| variable                   | description              | default      | required |
+|----------------------------|--------------------------|--------------|:--------:|
+| `SMTP_HOST`                | SMTP Host                | localhost    |          |
+| `SMTP_PORT`                | SMTP Host                | 1025         |          |
 
 ## Hacking
 
