@@ -170,7 +170,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.3)
-    libv8 (3.16.14.11)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     macaddr (1.7.1)
@@ -258,7 +257,6 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.2)
-    ref (2.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rmagick (2.15.3)
@@ -326,9 +324,6 @@ GEM
     stackprof (0.2.7)
     systemu (2.6.5)
     temple (0.7.6)
-    therubyracer (0.12.2)
-      libv8 (~> 3.16.14.0)
-      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -404,7 +399,6 @@ DEPENDENCIES
   simplecov
   slim-rails
   stackprof
-  therubyracer
   turbolinks
   uglifier
   unicorn-rails

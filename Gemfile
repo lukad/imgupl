@@ -26,7 +26,6 @@ gem 'enumerize'
 group :development do
   gem 'bullet'
   gem 'ruby-growl'
-  gem 'therubyracer', platforms: :ruby
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
