@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
     get :upload, to: 'uploads#new', as: 'new_upload'
 
-    resources :uploads
+    resources :uploads do
+      resources :comments, only: [:create, :destroy]
+    end
 
     devise_for :users
     ActiveAdmin.routes(self)

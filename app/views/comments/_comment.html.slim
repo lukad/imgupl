@@ -1,0 +1,22 @@
+.media
+  .media-left.text-center
+    button.btn.btn-link.btn-xs type='button'
+      span.glyphicon.glyphicon-arrow-up
+    br
+    | 0
+    button.btn.btn-link.btn-xs type='button'
+      span.glyphicon.glyphicon-arrow-down
+  .media-body
+    strong = comment.user.username
+    span.text-muted< commented #{time_ago_in_words comment.created_at} ago
+    - if can? :create, comment
+      span.text-muted<
+        a href='#reply-to-#{comment.id}' data-toggle='collapse' Reply
+    - if can? :edit, comment
+      span.text-muted =< link_to 'Edit', edit_admin_comment_path(comment)
+    - if can? :destroy, comment
+      span.text-muted =< link_to 'Delete', [upload, comment], method: :delete, data: { confirm: 'Delete comment?' }
+    hr.hr-small
+    p = comment.body
+    = render 'comments/form', upload: upload, comment: reply, parent_id: comment.id, collapse: true
+    = capture(&children)

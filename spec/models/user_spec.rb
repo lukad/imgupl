@@ -11,6 +11,7 @@ RSpec.describe User, type: :model do
 
   context 'associations' do
     it { is_expected.to have_many(:uploads) }
+    it { is_expected.to have_many(:comments) }
   end
 
   it { is_expected.to enumerize(:role).in(:guest, :user, :mod, :admin).with_default(:guest) }
@@ -76,38 +77,79 @@ RSpec.describe User, type: :model do
   describe 'abilities' do
     subject(:ability) { Ability.new(user) }
     let(:user) { build(:user, role: role) }
-    let(:upload) { Upload.new }
+    let(:upload) { build(:upload) }
+    let(:comment) { build(:comment) }
 
     context 'guest' do
       let(:role) { :guest }
-      it { is_expected.not_to be_able_to(:create, Upload.new) }
-      it { is_expected.to be_able_to(:read, Upload.new) }
-      it { is_expected.not_to be_able_to(:edit, Upload.new) }
-      it { is_expected.not_to be_able_to(:destroy, Upload.new) }
+
+      context 'uploads' do
+        it { is_expected.not_to be_able_to(:create, upload) }
+        it { is_expected.to be_able_to(:read, upload) }
+        it { is_expected.not_to be_able_to(:edit, upload) }
+        it { is_expected.not_to be_able_to(:destroy, upload) }
+      end
+
+      context 'comments' do
+        it { is_expected.not_to be_able_to(:create, comment) }
+        it { is_expected.to be_able_to(:read, comment) }
+        it { is_expected.not_to be_able_to(:edit, comment) }
+        it { is_expected.not_to be_able_to(:destroy, comment) }
+      end
     end
 
     context 'user' do
       let(:role) { :user }
-      it { is_expected.to be_able_to(:create, Upload.new) }
-      it { is_expected.to be_able_to(:read, Upload.new) }
-      it { is_expected.not_to be_able_to(:edit, Upload.new) }
-      it { is_expected.not_to be_able_to(:destroy, Upload.new) }
+
+      context 'uploads' do
+        it { is_expected.to be_able_to(:create, upload) }
+        it { is_expected.to be_able_to(:read, upload) }
+        it { is_expected.not_to be_able_to(:edit, upload) }
+        it { is_expected.not_to be_able_to(:destroy, upload) }
+      end
+
+      context 'comments' do
+        it { is_expected.to be_able_to(:create, comment) }
+        it { is_expected.to be_able_to(:read, comment) }
+        it { is_expected.not_to be_able_to(:edit, comment) }
+        it { is_expected.not_to be_able_to(:destroy, comment) }
+      end
     end
 
     context 'mod' do
       let(:role) { :mod }
-      it { is_expected.to be_able_to(:create, Upload.new) }
-      it { is_expected.to be_able_to(:read, Upload.new) }
-      it { is_expected.not_to be_able_to(:edit, Upload.new) }
-      it { is_expected.to be_able_to(:destroy, Upload.new) }
+
+      context 'uploads' do
+        it { is_expected.to be_able_to(:create, upload) }
+        it { is_expected.to be_able_to(:read, upload) }
+        it { is_expected.not_to be_able_to(:edit, upload) }
+        it { is_expected.to be_able_to(:destroy, upload) }
+      end
+
+      context 'comments' do
+        it { is_expected.to be_able_to(:create, comment) }
+        it { is_expected.to be_able_to(:read, comment) }
+        it { is_expected.not_to be_able_to(:edit, comment) }
+        it { is_expected.to be_able_to(:destroy, comment) }
+      end
     end
 
     context 'admin' do
       let(:role) { :admin }
-      it { is_expected.to be_able_to(:create, Upload.new) }
-      it { is_expected.to be_able_to(:read, Upload.new) }
-      it { is_expected.to be_able_to(:edit, Upload.new) }
-      it { is_expected.to be_able_to(:destroy, Upload.new) }
+
+      context 'uploads' do
+        it { is_expected.to be_able_to(:create, upload) }
+        it { is_expected.to be_able_to(:read, upload) }
+        it { is_expected.to be_able_to(:edit, upload) }
+        it { is_expected.to be_able_to(:destroy, upload) }
+      end
+
+      context 'comments' do
+        it { is_expected.to be_able_to(:create, comment) }
+        it { is_expected.to be_able_to(:read, comment) }
+        it { is_expected.to be_able_to(:edit, comment) }
+        it { is_expected.to be_able_to(:destroy, comment) }
+      end
     end
   end
 end

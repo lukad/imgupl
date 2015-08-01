@@ -3,6 +3,12 @@ ActiveAdmin.register Upload do
 
   permit_params :user_id, :image
 
+  sidebar 'Details', only: [:show, :edit] do
+    ul do
+      li link_to 'Comments', admin_upload_comments_path(upload)
+    end
+  end
+
   index do
     selectable_column
     id_column
@@ -34,7 +40,10 @@ ActiveAdmin.register Upload do
 
   form do |f|
     f.semantic_errors
-    f.inputs :user, :image
+    f.inputs do
+      f.input :user
+      f.input :image
+    end
     f.actions
   end
 end

@@ -9,6 +9,8 @@ class UploadsController < ApplicationController
     @upload = Upload.find(params[:id])
     @next = @upload.next
     @previous = @upload.previous
+    @comments = @upload.comments.includes(:user).hash_tree
+    @comment = Comment.new(upload: @upload)
     render 'show', layout: 'fluid'
   end
 

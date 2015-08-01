@@ -22,6 +22,7 @@ gem 'unicorn-rails'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'cancancan'
 gem 'enumerize'
+gem 'closure_tree'
 
 group :development do
   gem 'bullet'
@@ -29,8 +30,6 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'railroady'
-  gem 'annotate'
   gem 'flamegraph'
   gem 'stackprof', platforms: :ruby
   gem 'capistrano'
