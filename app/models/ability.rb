@@ -10,11 +10,11 @@ class Ability
     when 'admin'
       can :manage, :all
     when 'mod'
-      can :moderate, Upload
+      can :moderate, [Upload, Comment]
     when 'user'
-      can [:read, :create], Upload
+      can [:read, :create], [Upload, Comment]
     when 'guest'
-      can :read, Upload
+      can :read, [Upload, Comment]
     end
   end
 end

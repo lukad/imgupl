@@ -4,12 +4,22 @@ FactoryGirl.define do
     sequence(:username) { |n| "foobar#{n}" }
     password 'password'
     confirmed_at { Time.zone.now }
+    role :user
 
     trait :unconfirmed do
       confirmed_at nil
+      role :guest
     end
 
-    trait :admin do
+    factory :guest, traits: [:unconfirmed] do
+      role :guest
+    end
+
+    factory :mod do
+      role :mod
+    end
+
+    factory :admin do
       role :admin
     end
   end

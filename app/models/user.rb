@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
             predicates: true
 
   has_many :uploads, dependent: :destroy
+  has_many :comments
 
   validates :username, presence: true
   validates :username, uniqueness: { case_sensitive: false }

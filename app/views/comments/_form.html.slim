@@ -1,0 +1,12 @@
+- comment_form = capture do
+  = form_for [upload, comment], html: { class: 'well' } do |f|
+    = f.hidden_field :upload_id
+    = f.hidden_field :parent_id, value: local_assigns.fetch(:parent_id, nil)
+    .form-group
+      = f.text_area :body, class: 'form-control', placeholder: 'Comment goes here'
+    = f.submit class: 'btn btn-primary'
+
+- if local_assigns.key?(:parent_id)
+  .collapse id='reply-to-#{parent_id}' = comment_form
+- else
+  div = comment_form

@@ -7,5 +7,6 @@ ActiveAdmin.setup do |config|
   config.logout_link_path = :destroy_user_session_path
   config.logout_link_method = :delete
   config.comments = false
+  config.comments_registration_name = 'AdminComment'
   config.batch_actions = true
 end
