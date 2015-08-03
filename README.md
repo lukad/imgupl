@@ -8,8 +8,8 @@ Fancy image upload platform.
 ## Features
 
 * [x] Upload images (duh)
-* [ ] Comment uploads
-* [ ] Rate uploads
+* [x] Comment uploads
+* [ ] Rate uploads/comments
 * [ ] Tag uploads
 * [x] Role system (guest, user, mod, admin)
 
