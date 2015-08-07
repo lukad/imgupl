@@ -31,7 +31,7 @@ class UploadsController < ApplicationController
 
   def destroy
     Upload.find(params[:id]).destroy
-    redirect_to uploads_path, flash[:success] = 'Upload deleted'
+    redirect_to uploads_path, flash: { success: 'Upload deleted' }
   end
 
   private
