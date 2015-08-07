@@ -25,7 +25,7 @@ class UploadsController < ApplicationController
       redirect_to @upload
     else
       flash[:error] = 'Image could not be uploaded'
-      render 'new'
+      render 'new', status: 422
     end
   end
 
