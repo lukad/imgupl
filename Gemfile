@@ -32,9 +32,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'flamegraph'
   gem 'stackprof', platforms: :ruby
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
   gem 'meta_request'
 end
 
