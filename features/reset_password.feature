@@ -1,5 +1,5 @@
 Feature: Reset password
-  In order to recover my account when I ahve forgotten my password
+  In order to recover my account when I have forgotten my password
   As a registered User
   I want to be able to reset my password using my email address
 
