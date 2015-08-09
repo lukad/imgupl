@@ -3,18 +3,18 @@ Feature: Registration
   As an unregistered User
   I want to be able to sign up via email, username and password
 
-  Scenario: Receiving an confirmation mail
+  Background:
     Given I sign up with "foo", "foo@example.com" and "1234qwer"
+
+  Scenario: Receiving an confirmation mail
     Then "foo@example.com" has received an email
 
   Scenario: Confirming the email address
-    Given I sign up with "foo", "foo@example.com" and "1234qwer"
-    And "foo@example.com" follows "Confirm my account" in the email
+    Given "foo@example.com" follows "Confirm my account" in the email
     Then "foo@example.com" Is confirmed
 
   Scenario Outline: Signing up with invalid data
-    Given I sign up with "foo", "foo@example.com" and "1234qwer"
-    And no emails have been sent
+    Given no emails have been sent
     And I sign up with "<username>", "<email>" and "<password>"
     Then I see "<message>"
     And "<email>" has received no emails
