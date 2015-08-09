@@ -26,5 +26,4 @@ Feature: Registration
       | bar      |                 | 1234qwer | Email can't be blank            |
       | bar      | foo@example.com | 1234qwer | Email has already been taken    |
       | bar      | foo@example.org | 1234     | Password is too short           |
-      | bar      | foo@example.org | 1234     | Password is too short           |
       | bar      | foo@example.org |          | Password can't be blank         |
