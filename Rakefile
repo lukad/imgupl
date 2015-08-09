@@ -6,4 +6,4 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 task(:default).prerequisites.clear
-task default: %i(rubocop spec)
+task default: %i(rubocop spec cucumber)

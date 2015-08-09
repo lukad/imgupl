@@ -42,14 +42,16 @@ group :test, :development do
   gem 'pry-doc'
   gem 'pry-coolline'
   gem 'pry-remote'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
 end
 
 group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
+  gem 'email_spec'
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', require: false
