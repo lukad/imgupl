@@ -1,0 +1,28 @@
+- if current_user.present? && can?(:vote, comment)
+  - if current_user.voted_as_when_voted_for comment
+    = button_to unvote_comment_path(comment), \
+      method: :delete,
+      class: 'btn btn-xs btn-link' do
+      mark: span.glyphicon.glyphicon-arrow-up
+  - else
+    = button_to upvote_comment_path(comment), \
+      method: :post,
+      class: 'btn btn-xs btn-link' do
+      span.glyphicon.glyphicon-arrow-up
+  = comment.weighted_score
+  - if current_user.voted_as_when_voted_for(comment) == false
+    = button_to unvote_comment_path(id: comment.id), \
+      method: :delete,
+      class: 'btn btn-xs btn-link' do
+      mark: span.glyphicon.glyphicon-arrow-down
+  - else
+    = button_to downvote_comment_path(comment), \
+      method: :post,
+      class: 'btn btn-xs btn-link' do
+      span.glyphicon.glyphicon-arrow-down
+- else
+  button.btn.btn-xs.btn-link
+    span.glyphicon.glyphicon-arrow-up
+  = comment.weighted_score
+  button.btn.btn-xs.btn-link
+    span.glyphicon.glyphicon-arrow-down

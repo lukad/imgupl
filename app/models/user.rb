@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   extend Enumerize
 
+  acts_as_voter
+
   devise :database_authenticatable,
          :registerable,
          :confirmable,

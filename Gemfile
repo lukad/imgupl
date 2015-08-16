@@ -23,6 +23,7 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'cancancan'
 gem 'enumerize'
 gem 'closure_tree'
+gem 'acts_as_votable'
 
 group :development do
   gem 'bullet'

@@ -2,6 +2,8 @@ class Comment < ActiveRecord::Base
   has_closure_tree order: 'created_at ASC',
                    dependent: :nullify
 
+  acts_as_votable
+
   belongs_to :user, required: true
   belongs_to :upload, required: true
 

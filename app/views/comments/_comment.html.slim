@@ -1,14 +1,9 @@
 .media
   .media-left.text-center
-    button.btn.btn-link.btn-xs type='button'
-      span.glyphicon.glyphicon-arrow-up
-    br
-    | 0
-    button.btn.btn-link.btn-xs type='button'
-      span.glyphicon.glyphicon-arrow-down
+    = render 'comments/votes', comment: comment
   .media-body
     strong = comment.user.username
-    span.text-muted< commented #{time_ago_in_words comment.created_at} ago
+    span.text-muted< commented #{time_ago_in_words(comment.created_at)} ago
     - if can? :create, comment
       span.text-muted<
         a href='#reply-to-#{comment.id}' data-toggle='collapse' Reply

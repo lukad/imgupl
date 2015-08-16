@@ -23,6 +23,21 @@ class CommentsController < ApplicationController
     redirect_to upload
   end
 
+  def unvote
+    current_user.unvote_for @comment
+    redirect_to @comment.upload
+  end
+
+  def upvote
+    current_user.upvotes @comment
+    redirect_to @comment.upload
+  end
+
+  def downvote
+    current_user.downvotes @comment
+    redirect_to @comment.upload
+  end
+
   private
 
   def comment_params

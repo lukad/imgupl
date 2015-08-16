@@ -88,6 +88,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, upload) }
         it { is_expected.not_to be_able_to(:edit, upload) }
         it { is_expected.not_to be_able_to(:destroy, upload) }
+        it { is_expected.not_to be_able_to(:vote, upload) }
       end
 
       context 'comments' do
@@ -95,6 +96,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, comment) }
         it { is_expected.not_to be_able_to(:edit, comment) }
         it { is_expected.not_to be_able_to(:destroy, comment) }
+        it { is_expected.not_to be_able_to(:vote, comment) }
       end
     end
 
@@ -106,6 +108,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, upload) }
         it { is_expected.not_to be_able_to(:edit, upload) }
         it { is_expected.not_to be_able_to(:destroy, upload) }
+        it { is_expected.to be_able_to(:vote, upload) }
       end
 
       context 'comments' do
@@ -113,6 +116,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, comment) }
         it { is_expected.not_to be_able_to(:edit, comment) }
         it { is_expected.not_to be_able_to(:destroy, comment) }
+        it { is_expected.to be_able_to(:vote, comment) }
       end
     end
 
@@ -124,6 +128,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, upload) }
         it { is_expected.not_to be_able_to(:edit, upload) }
         it { is_expected.to be_able_to(:destroy, upload) }
+        it { is_expected.to be_able_to(:vote, upload) }
       end
 
       context 'comments' do
@@ -131,6 +136,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, comment) }
         it { is_expected.not_to be_able_to(:edit, comment) }
         it { is_expected.to be_able_to(:destroy, comment) }
+        it { is_expected.to be_able_to(:vote, comment) }
       end
     end
 
@@ -142,6 +148,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, upload) }
         it { is_expected.to be_able_to(:edit, upload) }
         it { is_expected.to be_able_to(:destroy, upload) }
+        it { is_expected.to be_able_to(:vote, upload) }
       end
 
       context 'comments' do
@@ -149,6 +156,7 @@ RSpec.describe User, type: :model do
         it { is_expected.to be_able_to(:read, comment) }
         it { is_expected.to be_able_to(:edit, comment) }
         it { is_expected.to be_able_to(:destroy, comment) }
+        it { is_expected.to be_able_to(:vote, comment) }
       end
     end
   end
