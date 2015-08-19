@@ -38,8 +38,9 @@ The following environment variables are only used in production environment.
 ## Hacking
 
 * Install [docker-compose](http://docs.docker.com/compose/install/)
-* Run `docker-compose up` and visit [](http://localhost:3000)
-* Visit [](http://localhost:1080) for the mailcatcher web interface
+* Run `docker-compose run --rm web bundle exec db:setup`
+* Run `docker-compose up` and visit [http://localhost:3000](http://localhost:3000)
+* Visit [http://localhost:1080](http://localhost:1080) for the mailcatcher web interface
 
 ## Contributing
 
