@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include Votable
+
   load_and_authorize_resource
 
   def create
@@ -21,21 +23,6 @@ class CommentsController < ApplicationController
       flash[:error] = 'Comment could not be deleted'
     end
     redirect_to upload
-  end
-
-  def unvote
-    current_user.unvote_for @comment
-    redirect_to @comment.upload
-  end
-
-  def upvote
-    current_user.upvotes @comment
-    redirect_to @comment.upload
-  end
-
-  def downvote
-    current_user.downvotes @comment
-    redirect_to @comment.upload
   end
 
   private

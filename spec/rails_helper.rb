@@ -14,6 +14,7 @@ require 'rspec/rails'
 
 require 'shoulda/matchers'
 require 'cancan/matchers'
+require 'database_cleaner'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -34,7 +35,14 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.include FactoryGirl::Syntax::Methods
-  config.before(:suite) { FactoryGirl.lint }
+  config.before(:suite) do
+    begin
+      DatabaseCleaner.start
+      FactoryGirl.lint
+    ensure
+      DatabaseCleaner.clean
+    end
+  end
 
   config.infer_spec_type_from_file_location!
 

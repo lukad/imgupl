@@ -1,5 +1,7 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails' do
+  add_filter 'app/admin'
+end
 
 require 'cucumber/rails'
 require 'email_spec/cucumber'

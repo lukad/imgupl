@@ -10,7 +10,7 @@
     - if can? :edit, comment
       span.text-muted =< link_to 'Edit', edit_admin_comment_path(comment)
     - if can? :destroy, comment
-      span.text-muted =< link_to 'Delete', [upload, comment], method: :delete, data: { confirm: 'Delete comment?' }
+      span.text-muted =< link_to 'Delete', admin_comment_path(comment), method: :delete, data: { confirm: 'Delete comment?' }
     hr.hr-small
     p = comment.body
     = render 'comments/form', upload: upload, comment: reply, parent_id: comment.id, collapse: true

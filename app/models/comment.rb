@@ -1,6 +1,5 @@
 class Comment < ActiveRecord::Base
-  has_closure_tree order: 'created_at ASC',
-                   dependent: :nullify
+  has_closure_tree dependent: :nullify
 
   acts_as_votable
 
