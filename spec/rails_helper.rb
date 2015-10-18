@@ -1,12 +1,13 @@
-ENV['RAILS_ENV'] ||= 'test'
-if ENV.key? 'TRAVIS'
-  require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
-else
-  require 'simplecov'
-  SimpleCov.start 'rails' do
-    add_filter 'app/admin'
-  end
+require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+
+SimpleCov.start 'rails' do
+  add_filter 'app/admin'
 end
 
 require File.expand_path('../../config/environment', __FILE__)
