@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     end
 
     devise_for :users
-    ActiveAdmin.routes(self)
+
+    begin
+      ActiveAdmin.routes(self)
+    rescue ActiveAdmin::DatabaseHitDuringLoad => e
+      puts "ActiveAdmin: #{e.class}: #{e}"
+    end
   end
 end
