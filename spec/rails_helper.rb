@@ -1,7 +1,7 @@
 require 'simplecov'
 require 'coveralls'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
@@ -35,7 +35,6 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.include FactoryGirl::Syntax::Methods
-  config.before(:suite) { FactoryGirl.lint }
 
   config.infer_spec_type_from_file_location!
 

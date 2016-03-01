@@ -16,7 +16,7 @@ ActiveAdmin.register_page 'Dashboard' do
                 tr do
                   td link_to(user.username, admin_user_path(user))
                   td user.created_at
-                  td(span user.confirmed? ? 'Yes' : 'No', class: "status_tag #{user.confirmed? ? 'yes' : 'no'}")
+                  td(span(user.confirmed? ? 'Yes' : 'No', class: "status_tag #{user.confirmed? ? 'yes' : 'no'}"))
                 end
               end
             end

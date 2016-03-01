@@ -76,6 +76,7 @@ RSpec.describe User, type: :model do
 
   describe 'abilities' do
     subject(:ability) { Ability.new(user) }
+
     let(:user) { build(:user, role: role) }
     let(:upload) { build(:upload) }
     let(:comment) { build(:comment) }
