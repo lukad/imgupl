@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     begin
       ActiveAdmin.routes(self)
     rescue ActiveAdmin::DatabaseHitDuringLoad => e
-      puts "ActiveAdmin: #{e.class}: #{e}"
+      Rails.logger.error("ActiveAdmin: #{e.class}: #{e}")
     end
   end
 end
