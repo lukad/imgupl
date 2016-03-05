@@ -17,23 +17,17 @@ Fancy image upload platform.
 
 The app is configured with the following environment variables.
 
-| variable                   | description              | default      | required |
-|----------------------------|--------------------------|--------------|:--------:|
-| `APP_ROOT_PREFIX`          | App root prefix          |              |          |
-| `DATABASE_CONNECTION_POOL` | Postgres connection pool | 5            |          |
-| `DATABASE_DB`              | Posgres database name    |              | ✓        |
-| `DATABASE_HOST`            | Postgres host            | localhost    |          |
-| `DATABASE_PASSWORD`        | Postgress password       |              |          |
-| `DATABASE_PORT`            | Postgres port            | 5432         |          |
-| `DATABASE_USERNAME`        | Postgres username        | current user |          |
-| `SECRET_KEY_BASE`          | Secret key base          |              | ✓        |
-
-The following environment variables are only used in production environment.
-
-| variable                   | description              | default      | required |
-|----------------------------|--------------------------|--------------|:--------:|
-| `SMTP_HOST`                | SMTP Host                | localhost    |          |
-| `SMTP_PORT`                | SMTP Host                | 1025         |          |
+| variable                   | description              | default        | required |
+|----------------------------|--------------------------|----------------|:--------:|
+| `APP_ROOT_PREFIX`          | App root prefix          |                |          |
+| `HOST`                     | Host to link to          | localhost:3000 |          |
+| `DATABASE_CONNECTION_POOL` | Postgres connection pool | 5              |          |
+| `DATABASE_DB`              | Posgres database name    |                | ✓        |
+| `DATABASE_HOST`            | Postgres host            | localhost      |          |
+| `DATABASE_PASSWORD`        | Postgress password       |                |          |
+| `DATABASE_PORT`            | Postgres port            | 5432           |          |
+| `DATABASE_USERNAME`        | Postgres username        | current user   |          |
+| `SECRET_KEY_BASE`          | Secret key base          |                | ✓        |
 
 ## Hacking
 
