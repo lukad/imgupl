@@ -17,4 +17,6 @@ ADD . /imgupl
 
 EXPOSE 3000
 
+VOLUME /imgupl/public/image
+
 CMD ["bundle", "exec", "rails", "server", "-b0.0.0.0"]
