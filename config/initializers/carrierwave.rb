@@ -1,6 +1,6 @@
 if Rails.env.production?
   require 'carrierwave/storage/fog'
-  Fog.credentials = { :path_style => true }
+  Fog.credentials = { path_style: true }
 end
 
 CarrierWave.configure do |config|
