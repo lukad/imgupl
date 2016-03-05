@@ -1,9 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  storage :file
-  # storage :fog
-
   def filename
     "#{secure_token}.#{file.extension}"
   end

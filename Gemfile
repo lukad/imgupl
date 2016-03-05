@@ -16,13 +16,18 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'carrierwave'
+gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave.git'
 gem 'rmagick'
 gem 'unicorn-rails'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'cancancan'
 gem 'enumerize'
 gem 'closure_tree'
+
+group :production do
+  gem 'fog'
+  gem 'fog-aws'
+end
 
 group :development do
   gem 'bullet'
