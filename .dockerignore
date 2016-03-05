@@ -1,0 +1,5 @@
+tmp
+public/uploads
+public/image
+log/*.log
+.git

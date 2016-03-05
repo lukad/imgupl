@@ -27,6 +27,9 @@ The app is configured with the following environment variables.
 | `DATABASE_PASSWORD`        | Postgress password       |                |          |
 | `DATABASE_PORT`            | Postgres port            | 5432           |          |
 | `DATABASE_USERNAME`        | Postgres username        | current user   |          |
+| `PORT`                     | Port to listen on        | 3000           |          |
+| `PUMA_WORKERS`             | Amount of puma workers   | 2              |          |
+| `PUMA_THREADS`             | Number of puma threads   | 5              |          |
 | `S3_BUCKET`                | AWS S3 Bucket            |                | ✓        |
 | `S3_KEY`                   | AWS S3 KEY               |                | ✓        |
 | `S3_REGION`                | AWS S3 REGION            |                | ✓        |

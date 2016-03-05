@@ -15,6 +15,8 @@ RUN gem install bundler && bundle install --jobs 20 --retry 5
 
 ADD . /imgupl
 
-EXPOSE 3000
+ENV PORT 3000
 
-CMD ["bundle", "exec", "rails", "server", "-b0.0.0.0"]
+EXPOSE $PORT
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

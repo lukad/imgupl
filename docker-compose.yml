@@ -9,7 +9,7 @@ services:
       DATABASE_DB: imgupl
       DATABASE_HOST: db
       DATABASE_USER: postgres
-      SECRET_KEY_BASE: 87e20525ce88da831824af93fdc1ccd124e73378d5490adbc09690a713b41dda4ac1e9b640e6125145342213e36a4c3ae779fc7a499a3516e965f9a37057e45a
+      SECRET_KEY_BASE: foobar
       SMTP_HOST: mail
       SMTP_PORT: 1025
     ports:

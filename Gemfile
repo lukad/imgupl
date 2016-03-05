@@ -18,11 +18,11 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave.git'
 gem 'rmagick'
-gem 'unicorn-rails'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'cancancan'
 gem 'enumerize'
 gem 'closure_tree'
+gem 'puma'
 
 group :production do
   gem 'fog'
@@ -41,7 +41,6 @@ group :development do
 end
 
 group :test, :development do
-  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-doc'
