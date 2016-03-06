@@ -19,7 +19,6 @@ The app is configured with the following environment variables.
 
 | variable                   | description              | default        | required |
 |----------------------------|--------------------------|----------------|:--------:|
-| `APP_ROOT_PREFIX`          | App root prefix          |                |          |
 | `HOST`                     | Host to link to          | localhost:3000 |          |
 | `DATABASE_CONNECTION_POOL` | Postgres connection pool | 5              |          |
 | `DATABASE_DB`              | Posgres database name    |                | ✓        |
