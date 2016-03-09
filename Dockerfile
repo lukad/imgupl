@@ -19,4 +19,4 @@ ENV PORT 3000
 
 EXPOSE $PORT
 
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD bundle exec puma -C config/puma.rb
